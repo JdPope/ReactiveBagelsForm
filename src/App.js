@@ -15,12 +15,17 @@ class App extends Component{
     .then(result => this.setState({bagels:result}))
   }
 
+  makeBagel = ({bagel}) => {
+    console.log(`This is the ${bagel} we made`);
+  };
+
+
   render(){
     return(
       <>
         <h1>This is our Bagels App</h1>
-        <BagelsContainer bagels={this.state.bagels}/>
-        <BagelsForm/>
+        <BagelsForm handleMakeBagel={this.makeBagel}/>
+        <BagelsContainer bagels={this.state.bagels}/>       
       </>
     )
   }
